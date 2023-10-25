@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="name_label">Nazwa</string>
+    <string name="name_hint">Wpisz nazwe zadania</string>
+    <string name="details_label">Szczegoly</string>
+    <string name="done_label">Wykonane</string>
 </resources>
