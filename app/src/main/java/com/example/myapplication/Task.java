@@ -15,5 +15,35 @@ public class Task {
     }
 
 
+    public UUID getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
 }
