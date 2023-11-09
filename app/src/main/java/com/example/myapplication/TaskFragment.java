@@ -14,13 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import java.util.zip.Inflater;
-
 public class TaskFragment extends Fragment {
     private Task task;
     private EditText nameField;
     private Button dateButton;
     private CheckBox doneCheckBox;
+
+
+    private static final String KEY_EXTRA_TASK_ID = "tasklistFragment.task_id";
 
     public TaskFragment() {}
 
