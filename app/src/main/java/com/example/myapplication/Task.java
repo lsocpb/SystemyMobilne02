@@ -14,36 +14,28 @@ public class Task {
         date = new Date();
     }
 
-
-    public UUID getId() {
-        return id;
+    public void setName(String _name) {
+        this.name = _name;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public UUID getId() {
+        return this.id;
     }
 
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    public Date getDate() {
+        return this.date;
+    }
+
+    public boolean isDone() {
+        return this.done;
+    }
+
 }
