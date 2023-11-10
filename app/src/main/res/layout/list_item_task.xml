@@ -4,6 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <CheckBox
+        android:id="@+id/checkbox_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
     <ImageView
         android:id="@+id/image_done"
         android:layout_width="wrap_content"
@@ -22,5 +28,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/image_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:srcCompat="@drawable/ic_house" />
 
 </LinearLayout>

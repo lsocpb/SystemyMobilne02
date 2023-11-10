@@ -10,14 +10,18 @@ public class TaskStorage {
     private  static final TaskStorage taskStorage = new TaskStorage();
     private final List<Task> tasks;
 
-    private TaskStorage()
-    {
+    private TaskStorage() {
         tasks = new ArrayList<>();
         for(int i = 0; i <= 100; i++) {
             Task task = new Task();
             task.setName("Zadanie #"+i);
             task.setDone(i % 3 == 0);
             tasks.add(task);
+
+            if(i % 3 == 0)
+                task.setCategory(Category.STUDIA);
+            else
+                task.setCategory(Category.DOM);
         }
     }
 
