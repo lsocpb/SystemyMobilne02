@@ -23,11 +23,16 @@
         android:layout_height="wrap_content"
         android:text="@string/task_details_label"/>
 
-    <Button
+    <EditText
         android:id="@+id/task_date"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"/>
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:autofillHints=""
+        android:inputType="date"/>
 
 
     <CheckBox
