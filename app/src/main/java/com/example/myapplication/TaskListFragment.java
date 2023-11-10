@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,6 +71,7 @@ public class TaskListFragment extends Fragment {
 
         public void bind(Task task) {
             this.task = task;
+            updateTaskName();
             nameTextView.setText(task.getName());
             dateTextView.setText(task.getDate().toString());
             doneCheckBox.setChecked(task.isDone());
@@ -79,6 +81,20 @@ public class TaskListFragment extends Fragment {
             } else {
                 iconImageView.setImageResource(R.drawable.ic_house);
             }
+        }
+
+        private void updateTaskName(){
+            if(task.isDone()) {
+                nameTextView.setPaintFlags(nameTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                nameTextView.setPaintFlags(nameTextView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            }
+
+            String taskName = task.getName();
+            if(taskName.length() > 20) {
+                taskName = taskName.substring(0, 20) + "...";
+            }
+            nameTextView.setText(taskName);
         }
 
         @Override
