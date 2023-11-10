@@ -7,9 +7,12 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +29,8 @@ public class TaskFragment extends Fragment {
     public static String ARG_TASK_ID = "task_id";
     private final Calendar calendar = Calendar.getInstance();
     private EditText dateField;
+
+    private Spinner categorySpinner;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +74,20 @@ public class TaskFragment extends Fragment {
 
         nameField.setText(task.getName());
 
+        categorySpinner = view.findViewById(R.id.task_category);
+        categorySpinner.setAdapter(new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_item, Category.values()));
+        categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                    task.setCategory(Category.values()[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        categorySpinner.setSelection(task.getCategory().ordinal());
         return view;
     }
 

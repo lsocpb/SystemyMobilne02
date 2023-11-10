@@ -13,6 +13,7 @@ public class Task {
     public Task() {
         id = UUID.randomUUID();
         date = new Date();
+        category = Category.DOM;
     }
 
     public void setName(String _name) {
